@@ -11,7 +11,12 @@ TODO: schreiben sie wie die Skripte aufgerufen werden sollen (d.h. welche Parame
 
 ### Ablauf der Automation
 
-TODO: Hier kommt ihr UML-Activity Diagramm
+1. Activity Diagramm von Script 1: 
+![Image of the file](script1.png)
+
+
+2. Activity Diagramm von Script 2: 
+![Image of the file](./script2.png)
 
 ### Konfigurationsdateien
 
