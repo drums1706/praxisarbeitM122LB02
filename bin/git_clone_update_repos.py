@@ -30,4 +30,4 @@ with open(myfile, "r", encoding='utf-8') as f:
             else:
                 git.Repo.clone_from(githublink, completePath)
         except:
-            print("Invalid Github repository")
+            print(f"Invalid Github repository: {githublink}")
