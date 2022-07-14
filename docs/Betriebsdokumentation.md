@@ -34,7 +34,6 @@ sudo apt install python3-pip
 pip3 install gitpython
 ````
 
-
 ## Bedienungsanleitung Benutzer
 
 ### User Input File
@@ -48,12 +47,15 @@ Für das Script git_clone_update_repos.py muss man nun alles im folgenden Format
 ## Bediensanleitung Benutzer
 
 ### Repository klonen
-
 ````
 git clone https://github.com/drums1706/praxisarbeitM122LB02.git
 ````
 ### Das Script git_clone_update_repos.py aufrufen
-
 ````
 python3 git_clone_update_repos.py <inputfile name> <foldername>
+````
+
+### Das Script git_extract_commits_m122.py aufrufen
+````
+python3 git_extract_commits_m122.py -d <foldername>
 ````
