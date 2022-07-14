@@ -25,8 +25,8 @@ visited = []
 with open(myfile, "r", encoding='utf-8') as f:
     for line in f:
         (githublink, folderName) = line.split(' ')
-        completePath = os.path.join(directory, folderName).strip()
-
+        folderName = folderName.strip()
+        completePath = os.path.join(directory, folderName)
         visited.append(folderName)
         try:      
             if (os.path.exists(completePath)):
