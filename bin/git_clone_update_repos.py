@@ -43,5 +43,5 @@ with open(myfile, "r", encoding='utf-8') as f:
 allSubDirectorys = os.listdir(directory)
 for cDir in allSubDirectorys:
     if cDir not in visited: 
-        os.remove(cDir)
+        os.remove(os.path.join(directory, folderName).strip())
 
