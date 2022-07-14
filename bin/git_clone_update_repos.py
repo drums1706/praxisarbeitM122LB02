@@ -27,7 +27,7 @@ with open(myfile, "r", encoding='utf-8') as f:
         (githublink, folderName) = line.split(' ')
         completePath = os.path.join(directory, folderName).strip()
 
-        visited.append(completePath)
+        visited.append(folderName)
         try:      
             if (os.path.exists(completePath)):
                 repo = git.Repo(completePath)
@@ -41,7 +41,9 @@ with open(myfile, "r", encoding='utf-8') as f:
             print(f"Invalid Github repository: {githublink}")
 
 #Delete unused repositorys
+print(visited)
 allSubDirectorys = os.listdir(directory)
+print(allSubDirectorys)
 for cDir in allSubDirectorys:
     delete = os.path.join(directory, cDir).strip()
     print(delete)
