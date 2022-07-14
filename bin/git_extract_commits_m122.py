@@ -71,6 +71,8 @@ for subdir in subTargetDirs:
             # Format: # Directory,Date in YYYYMMDD,Commit Hash, Commit Author
             lines.append([subdir, dateToDateString(commit.authored_datetime), commit.hexsha, commit.author])
 
+        else:
+            print(f"Not a directory: {directory}")
 # Write List into CSV @stackoverflow
 with open(str(OUTPUT_LOC), 'w') as file:
     write = csv.writer(file)
