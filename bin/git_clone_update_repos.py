@@ -20,12 +20,14 @@ with open(myfile, "r", encoding='utf-8') as f:
         print(line)
         (githublink, folderName) = line.split(' ')
         completePath = os.path.join(directory, folderName).strip()
-
-        if (os.path.exists(completePath)):
-            repo = git.Repo(completePath)
-            o = repo.remotes.origin
-            o.pull()
-            repo.close()
-            continue
-        else:
-            git.Repo.clone_from(githublink, completePath)
+        try:      
+            if (os.path.exists(completePath)):
+                repo = git.Repo(completePath)
+                o = repo.remotes.origin
+                o.pull()
+                repo.close()
+                continue
+            else:
+                git.Repo.clone_from(githublink, completePath)
+        except:
+            print("Invalid Github repository")
