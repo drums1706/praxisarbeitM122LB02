@@ -13,12 +13,21 @@ Es sollen 2 Skripts erstellt werden. Das erste Skript soll alle GIT-Repos mit GI
 
 1. Das Repository Clonen
 ````
-git clone https://github.com/drums1706/praxisM122
+git clone https://github.com/drums1706/praxisarbeitM122LB02.git
 ````
 
 2. Das verzeichnis wechseln
 ````
 cd praxisarbeitM122LB02/bin
+````
+
+3. Python und PIP installieren
+````
+sudo apt install python 3
+````
+
+````
+sudo apt install python3-pip
 ````
 
 ## Bedienungsanleitung Benutzer
