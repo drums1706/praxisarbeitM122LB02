@@ -38,6 +38,7 @@ with open(myfile, "r", encoding='utf-8') as f:
                 o = repo.remotes.origin
                 o.pull()
                 repo.close()
+                logging.info("Successful commit")
                 continue
             else:
                 git.Repo.clone_from(githublink, completePath)
