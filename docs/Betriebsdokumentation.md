@@ -16,18 +16,30 @@ Es sollen 2 Skripts erstellt werden. Das erste Skript soll alle GIT-Repos mit GI
 git clone https://github.com/drums1706/praxisM122
 ````
 
-### Konfiguration
+2. Das verzeichnis wechseln
+````
+cd praxisarbeitM122LB02/bin
+````
 
+## Bedienungsanleitung Benutzer
 
-....
+### User Input File
+
+Für das Script git_clone_update_repos.py muss man nun alles im folgenden Format für das git_clone_update_repos_input.txt eingeben:
+
+````
+<github url> <foldername>
+````
 
 ## Bediensanleitung Benutzer
 
-TODO: Erzeugen der Input-Files beschreiben, falls noetig
+### Repository klonen
 
-TODO: beschreiben des Scriptaufruf
+````
+git clone https://github.com/drums1706/praxisarbeitM122LB02.git
+````
+### Das Script git_clone_update_repos.py aufrufen
 
-TODO: beschreiben der erzeugt files (falls solche erzeugt werden)
-
-TODO: Lokation von logfiles und bekannte Fehlermeldungen beschreiben.
-
+````
+python3 git_clone_update_repos.py <inputfile name> <foldername>
+````
