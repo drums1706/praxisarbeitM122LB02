@@ -7,6 +7,7 @@ Skript 1
 | Clone Git-Repos |Git clone https://github.com/drums1706/praxisarbeitM122LB02 | Es müssen alle geklonten Git-Repos die nicht mehr gebraucht werden (da sie nicht mehr im input file sind), gelöscht werden. | Es müssen alle geklonten Git-Repos die nicht mehr gebraucht werden (da sie nicht mehr im input file sind), gelöscht werden. | Ricardo Hengartner | Datum: 14.07.2022 Status: Bestanden
 | Logging und Logfile |Es wurde ein File namens logfile.log erstellt | Die Logs haben folgendes Format: DateTime:Loglevel:Message | 2022-07-14 23:22:51,069:INFO | Ricardo Hengartner | Datum: 14.07.2022 Status: Bestanden |
 
+
 Skript 2
 
 | Testfall | Testdaten | erwartetes Testresultat | erhaltenes Testresultat | Tester | Testdatum und Teststatus |
