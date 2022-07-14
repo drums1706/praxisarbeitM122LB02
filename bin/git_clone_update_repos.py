@@ -1,3 +1,4 @@
+#! /bin/python3
 import argparse
 import os
 import configparser
@@ -6,20 +7,26 @@ os.environ["GIT_PYTHON_REFRESH"] = "quiet"
 import sys
 import git
 
+#Must point to input file with Github repositorys
 myfile = 'git_clone_update_repos_input.txt'
 
 directory = ""
 
+#set base directory
 if len(sys.argv) == 2:
     directory = sys.argv[1] 
 else:
     directory = os.getcwd()
 
+visited = []
+
+#Pull repository from file
 with open(myfile, "r", encoding='utf-8') as f:
     for line in f:
-        print(line)
         (githublink, folderName) = line.split(' ')
         completePath = os.path.join(directory, folderName).strip()
+
+        visited.append(folderName)
         try:      
             if (os.path.exists(completePath)):
                 repo = git.Repo(completePath)
@@ -31,3 +38,10 @@ with open(myfile, "r", encoding='utf-8') as f:
                 git.Repo.clone_from(githublink, completePath)
         except:
             print(f"Invalid Github repository: {githublink}")
+
+#Delete unused repositorys
+allSubDirectorys = os.listdir(directory)
+for cDir in allSubDirectorys:
+    if cDir not in visited: 
+        os.remove(cDir)
+
