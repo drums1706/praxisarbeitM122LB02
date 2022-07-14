@@ -6,17 +6,18 @@ Es sollen 2 Skripts erstellt werden. Das erste Skript soll alle GIT-Repos mit GI
 
 ## Installationsanleitung für Administratoren
 
+### Vorinstallation
+* Ubuntu 20.04.4 LTS
+
 ### Installation
 
-
+1. Das Repository Clonen
+````
+git clone https://github.com/drums1706/praxisM122
+````
 
 ### Konfiguration
 
-TODO: Beschreibung der Konfigurationsfiles (Beispiel-Files erstellen im Repo)
-
-TODO: Wie ist ein allfaelliger Cronjob einzurichten
-
-TODO: Wie sind User-Home-Templates einzurichten
 
 ....
 
