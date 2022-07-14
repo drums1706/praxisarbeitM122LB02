@@ -30,8 +30,6 @@ else:
 #list for used repository
 visited = []
 
-print(inputFile)
-print(directory)
 #Pull repository from file
 with open(inputFile, "r", encoding='utf-8') as f:
     for line in f:
