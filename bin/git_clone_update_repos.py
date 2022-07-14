@@ -6,18 +6,25 @@ os.environ["GIT_PYTHON_REFRESH"] = "quiet"
 import sys
 import git
 
-
-# assign base folder to the variable 'directory'
-directory = sys.argv[1]
-
 myfile = 'git_clone_update_repos_input.txt'
 
+directory = ""
+
+if len(sys.argv) == 2:
+    directory = sys.argv[1]
+else:
+    directory = os.getcwd()
 
 with open(myfile, "r", encoding='utf-8') as f:
     for line in f.read():
         githublink, folderName = line.split(' ')
-        if githublink.startswith('https'):
-            git.Repo
+        completePath = os.path.join(directory, folderName)
+
+        if (os.path.exists(completePath)):
+            repo = git.Repo(completePath)
+            o = repo.remotes.origin
+            o.pull()
+            repo.close()
+            continue
         else:
-            # KEY
-            mode = 'ssh'
+            git.Repo.clone_from(githublink, completePath)
