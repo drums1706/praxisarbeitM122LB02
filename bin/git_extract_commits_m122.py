@@ -5,13 +5,13 @@ from datetime import datetime
 import csv
 import os
 import argparse
-import logging # DEBUG, INFO, WARNING(Default), ERROR, CRITICAL
+import logging 
 
 # Change Default Logging Level
 logging.basicConfig(filename='logfile.log', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
 
-HEADER = ["Zielverzeichnis", "Datum", "Commit-Hash", "Author"] # Benjamin_Harlacher_Michael_de_Smitt,20220311,7fb40cbaacae6d9e1d598b030560117ccad28d63,Michael
-TARGET_DIR = '' # Specified later
+HEADER = ["Zielverzeichnis", "Datum", "Commit-Hash", "Author"] # M122_LB2,20220714,7fb40cbaacae6d9e1d598b030560117ccad28d63, Ricardo Henagrtner
+TARGET_DIR = '' 
 lines = []
 
 # Parser for Target Dir and Output Location and Filename of CSV
@@ -20,14 +20,14 @@ parser.add_argument("-o", "--Output", help="Output location and filename", defau
 parser.add_argument("-d", "--Directory", help="Target Directory -> Git Repos are in there", required=True)  
 args = parser.parse_args()
 
-OUTPUT_LOC = args.Output # Example: -d ~/PATH/GitHub/
-logging.info("Output Location and Filename " + OUTPUT_LOC + " defined")
+OUTPUT_LOC = args.Output # Example: -o ~/PATH/GitHub/
+#logging.info("Output Location and Filename " + OUTPUT_LOC + " defined")
 
-TARGET_DIR = args.Directory # Example: -o ~/PATH/filename.csv
-logging.info("Target Directory " + TARGET_DIR + " defined")
+TARGET_DIR = args.Directory # Example: -d ~/PATH/filename.csv
+#logging.info("Target Directory " + TARGET_DIR + " defined")
 
 
-# Create the date String; Example: YYYYMMDD - 05092022
+# Create the date String; Example: YYYYMMDD - 14072022
 def dateToDateString(now):
     date = now.strftime("%m%d%Y")
     return(date)
@@ -40,6 +40,7 @@ def validateTargetDir(targetDir):
         exit()
 
 validateTargetDir(TARGET_DIR)
+
 # Put SubDirs from TARGET_DIR in list
 subTargetDirs = os.listdir(TARGET_DIR)
 
@@ -50,11 +51,11 @@ for subdir in subTargetDirs:
     if os.path.isdir(directory):
 
         try:
-            # Create a new Repo instance if is valid git repo. Add all the Git Repos. Example: <git.repo.base.Repo '/Users/michaeldesmitt/Documents/GitHub/trailate-frontend/.git'>
+            # Create a new Repo instance if is valid git repo. Add all the Git Repos. 
             Repo(directory) # GitPython
             logging.info("Succesfully added: " + directory)
 
-        except Exception as Argument: # I had a stupid error message. Thats why I just put "Exception as Argument"
+        except Exception: 
             # Skip if not valid Git repo
             print(subdir, "is not a Git repository, skipping")
             logging.warning("The Git Repository: " + subdir + "; is not valid, going to the next one")
@@ -71,8 +72,8 @@ for subdir in subTargetDirs:
             lines.append([subdir, dateToDateString(commit.authored_datetime), commit.hexsha, commit.author])
 
 # Write List into CSV @stackoverflow
-with open(str(OUTPUT_LOC), 'w') as csvfile:
-    write = csv.writer(csvfile)
+with open(str(OUTPUT_LOC), 'w') as file:
+    write = csv.writer(file)
     write.writerow(HEADER)
     write.writerows(lines)
 
