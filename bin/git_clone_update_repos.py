@@ -13,20 +13,25 @@ import logging
 logging.basicConfig(filename='logfile.log', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
 
 #Must point to input file with Github repositorys
-myfile = 'git_clone_update_repos_input.txt'
+inputFile = ""
 
 directory = ""
 
+#set base file
+if len(sys.argv) >= 2:
+    inputFile = sys.argv[1]
+
 #set base directory
-if len(sys.argv) == 2:
-    directory = sys.argv[1] 
+if len(sys.argv) >= 3:
+    directory = sys.argv[2]
 else:
     directory = os.getcwd()
 
+#list for used repository
 visited = []
 
 #Pull repository from file
-with open(myfile, "r", encoding='utf-8') as f:
+with open(inputFile, "r", encoding='utf-8') as f:
     for line in f:
         (githublink, folderName) = line.split(' ')
         folderName = folderName.strip()
