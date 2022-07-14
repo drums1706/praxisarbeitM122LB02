@@ -9,7 +9,7 @@ import git
 import shutil
 import logging 
 
-# Change Default Logging Level
+#Logging
 logging.basicConfig(filename='logfile.log', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
 
 #Must point to input file with Github repositorys
