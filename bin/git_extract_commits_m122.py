@@ -47,7 +47,7 @@ subTargetDirs = os.listdir(TARGET_DIR)
 print(len(subTargetDirs))
 # Go trough each SubRepo and look if is valid git Repo
 for subdir in subTargetDirs:
-    directory = TARGET_DIR + subdir #PATH of Sub Dir
+    directory = TARGET_DIR +"/"+ subdir #PATH of Sub Dir
     if os.path.isdir(directory):
         print("hallo")
         try:
