@@ -44,7 +44,7 @@ validateTargetDir(TARGET_DIR)
 # Put SubDirs from TARGET_DIR in list
 subTargetDirs = os.listdir(TARGET_DIR)
 
-
+print(len(subTargetDirs))
 # Go trough each SubRepo and look if is valid git Repo
 for subdir in subTargetDirs:
     directory = TARGET_DIR + subdir #PATH of Sub Dir
