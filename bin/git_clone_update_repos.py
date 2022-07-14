@@ -7,6 +7,10 @@ os.environ["GIT_PYTHON_REFRESH"] = "quiet"
 import sys
 import git
 import shutil
+import logging 
+
+# Change Default Logging Level
+logging.basicConfig(filename='logfile.log', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
 
 #Must point to input file with Github repositorys
 myfile = 'git_clone_update_repos_input.txt'
@@ -38,14 +42,12 @@ with open(myfile, "r", encoding='utf-8') as f:
             else:
                 git.Repo.clone_from(githublink, completePath)
         except:
-            print(f"Invalid Github repository: {githublink}")
+            logging.info(f"Invalid Github repository: {githublink}")
 
 #Delete unused repositorys
-print(visited)
 allSubDirectorys = os.listdir(directory)
-print(allSubDirectorys)
 for cDir in allSubDirectorys:
-    delete = os.path.join(directory, cDir).strip()
-    print(delete)
+    deletePath = os.path.join(directory, cDir).strip()
     if cDir not in visited: 
-        shutil.rmtree(delete)
+        shutil.rmtree(deletePath)
+        logging.info(f"Deleted unused directorys: {deletePath}")
