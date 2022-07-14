@@ -47,7 +47,6 @@ subTargetDirs = os.listdir(TARGET_DIR)
 print(len(subTargetDirs))
 # Go trough each SubRepo and look if is valid git Repo
 for subdir in subTargetDirs:
-
     directory = TARGET_DIR + subdir #PATH of Sub Dir
     if os.path.isdir(directory):
         print("hallo")
@@ -72,8 +71,8 @@ for subdir in subTargetDirs:
             # Format: # Directory,Date in YYYYMMDD,Commit Hash, Commit Author
             lines.append([subdir, dateToDateString(commit.authored_datetime), commit.hexsha, commit.author])
 
-        else:
-            print(f"Not a directory: {directory}")
+    else:
+        print(f"Not a directory: {directory}")
 # Write List into CSV @stackoverflow
 with open(str(OUTPUT_LOC), 'w') as file:
     write = csv.writer(file)
