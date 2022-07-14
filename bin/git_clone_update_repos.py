@@ -43,5 +43,7 @@ with open(myfile, "r", encoding='utf-8') as f:
 #Delete unused repositorys
 allSubDirectorys = os.listdir(directory)
 for cDir in allSubDirectorys:
+    delete = os.path.join(directory, cDir).strip()
+    print(delete)
     if cDir not in visited: 
-        shutil.rmtree(os.path.join(directory, cDir).strip())
+        shutil.rmtree(delete)
