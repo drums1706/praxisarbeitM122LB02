@@ -30,6 +30,11 @@ sudo apt install python 3
 sudo apt install python3-pip
 ````
 
+````
+pip3 install gitpython
+````
+
+
 ## Bedienungsanleitung Benutzer
 
 ### User Input File
