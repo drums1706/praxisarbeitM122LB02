@@ -11,7 +11,7 @@ myfile = 'git_clone_update_repos_input.txt'
 directory = ""
 
 if len(sys.argv) == 2:
-    directory = sys.argv[1]
+    directory = sys.argv[1] 
 else:
     directory = os.getcwd()
 
