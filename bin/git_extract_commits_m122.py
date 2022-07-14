@@ -21,10 +21,10 @@ parser.add_argument("-d", "--Directory", help="Target Directory -> Git Repos are
 args = parser.parse_args()
 
 OUTPUT_LOC = args.Output # Example: -o ~/PATH/GitHub/
-#logging.info("Output Location and Filename " + OUTPUT_LOC + " defined")
+logging.info("Output Location and Filename " + OUTPUT_LOC + " defined")
 
 TARGET_DIR = args.Directory # Example: -d ~/PATH/filename.csv
-#logging.info("Target Directory " + TARGET_DIR + " defined")
+logging.info("Target Directory " + TARGET_DIR + " defined")
 
 
 # Create the date String; Example: YYYYMMDD - 14072022
