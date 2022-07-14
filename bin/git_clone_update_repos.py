@@ -17,6 +17,7 @@ else:
 
 with open(myfile, "r", encoding='utf-8') as f:
     for line in f.read():
+        print(line)
         (githublink, folderName) = line.split(' ')
         completePath = os.path.join(directory, folderName).strip()
 
