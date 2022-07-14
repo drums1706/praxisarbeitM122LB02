@@ -6,6 +6,7 @@ from xml.dom.expatbuilder import parseString
 os.environ["GIT_PYTHON_REFRESH"] = "quiet"
 import sys
 import git
+import shutil
 
 #Must point to input file with Github repositorys
 myfile = 'git_clone_update_repos_input.txt'
@@ -43,5 +44,4 @@ with open(myfile, "r", encoding='utf-8') as f:
 allSubDirectorys = os.listdir(directory)
 for cDir in allSubDirectorys:
     if cDir not in visited: 
-        os.removedirs(os.path.join(directory, cDir).strip())
-
+        shutil.rmtree(os.path.join(directory, cDir).strip())
