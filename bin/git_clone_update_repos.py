@@ -5,7 +5,7 @@ import configparser
 from xml.dom.expatbuilder import parseString
 os.environ["GIT_PYTHON_REFRESH"] = "quiet"
 import sys
-import git
+import git  
 import shutil
 import logging 
 
