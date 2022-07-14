@@ -47,10 +47,10 @@ subTargetDirs = os.listdir(TARGET_DIR)
 print(len(subTargetDirs))
 # Go trough each SubRepo and look if is valid git Repo
 for subdir in subTargetDirs:
-    print("hallo")
+
     directory = TARGET_DIR + subdir #PATH of Sub Dir
     if os.path.isdir(directory):
-
+        print("hallo")
         try:
             # Create a new Repo instance if is valid git repo. Add all the Git Repos. 
             Repo(directory) # GitPython
