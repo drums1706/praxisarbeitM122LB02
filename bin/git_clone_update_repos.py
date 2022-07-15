@@ -43,7 +43,6 @@ with open(inputFile, "r", encoding='utf-8') as f:
                 o = repo.remotes.origin
                 o.pull()
                 repo.close()
-                logging.info("Successful commit")
                 print("Git repositorys pulled")
                 continue
             else:
